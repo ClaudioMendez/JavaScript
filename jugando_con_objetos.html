@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<body>
+
+		<script>
+		// Print/log de la edad de John
+		var users = [{name: "Michael", age:37}, {name: "John", age:30}, {name: "David", age:17}];
+
+		console.log(users[1].age);
+
+		// Print/log del nombre del primer objeto
+		var users = [{name: "Michael", age:37}, {name: "John", age:30}, {name: "David", age:17}];
+
+		console.log(users[0].name);
+
+		// Print/log del nombre y la edad de cada usuario utilizando un for loop
+		var users = [{name: "Michael", age:37}, {name: "John", age:30}, {name: "David", age:17}];
+
+		for(i=0; i<users.length; i++){
+			console.log(users[i].name+" - "+users[i].age);
+		}
+
+		// Imprimir el nombre de los mayores de edad
+		var users = [{name: "Michael", age:37}, {name: "John", age:30}, {name: "David", age:27}];
+
+		for(i=0; i<users.length; i++){
+		  if(users[i].age>17){
+		  console.log(users[i].name);
+		  }
+		}
+
+		</script>
+
+	</body>
+</html>
