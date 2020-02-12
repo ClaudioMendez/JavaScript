@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Cursor En/Fuera</title>
+	<link rel="stylesheet" type="text/css" href="cursor-style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".imagen").hover(function(){
+				$(".imagen2", this).css("display", "block");
+				$(".imagen1", this).css("display", "none");
+			},
+			function(){
+				$(".imagen1", this).css("display", "block");
+				$(".imagen2", this).css("display", "none");
+			});
+		});
+	</script>
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="imagen">
+			<img class="imagen1" src="./img/camera1.jpg">
+			<img class="imagen2" src="./img/camera1b.jpg">
+		</div>
+		<div class="imagen">
+			<img class="imagen1" src="./img/camera2.jpg">
+			<img class="imagen2" src="./img/camera2b.jpg">
+		</div>
+		<div class="imagen">
+			<img class="imagen1" src="./img/camera3.jpg">
+			<img class="imagen2" src="./img/camera3b.jpg">
+		</div>
+		<div class="imagen">
+			<img class="imagen1" src="./img/camera4.jpg">
+			<img class="imagen2" src="./img/camera4b.jpg">
+		</div>		
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+.container{
+	width: 1280px;
+	height: 195px;
+}
+.imagen{
+	width: 315px;
+	height: 190px;
+	display: inline-block;
+}
+.imagen1{
+	width: 315px;
+	height: 190px;
+	display: block;
+}
+.imagen2{
+	width: 315px;
+	height: 190px;
+	display: none;
+}
