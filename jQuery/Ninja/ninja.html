@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Vanishing Ninja</title>
+	<link rel="stylesheet" type="text/css" href="ninja-style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".ninja img").click(function(){
+				$(this).fadeOut(1000);
+			});
+			$(".restore").click(function(){
+				$(".ninja img").fadeIn(1000);
+			});
+		});
+	</script>
 
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="ninja">
+				<img src="ninja.png">
+			</div>
+			<div class="ninja">
+				<img src="ninja.png">
+			</div>
+			<div class="ninja">
+				<img src="ninja.png">
+			</div>
+			<div class="ninja">
+				<img src="ninja.png">
+			</div>
+		</div>
+		<div class="row">
+			<div class="ninja">
+				<img src="ninja.png">
+			</div>
+			<div class="ninja">
+				<img src="ninja.png">
+			</div>
+			<div class="ninja">
+				<img src="ninja.png">
+			</div>
+			<div class="ninja">
+				<img src="ninja.png">
+			</div>
+		</div>
+		<button class="restore">RESTAURAR</button>
+
+	</div>
+</body>
+</html>
