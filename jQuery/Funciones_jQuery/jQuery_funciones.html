@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Funciones jQuery</title>
+	<link rel="stylesheet" type="text/css" href="funciones.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#boton1").click(function(){
+				$("#clase").addClass("red");
+			});
+			$("#boton2").click(function(){
+				$("#imagen").slideToggle("fast");
+			});
+			$("#boton3").click(function(){
+				$("#agrega").append("<p><b>Nuevo párrafo</b></p>");
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="block">
+			<h1 class="display">addClass</h1>
+		    <button id="boton1">Add Class</button>
+		    <p id="clase">Presiona el botón para agregar la clase RED a este párrafo</p>
+		</div>
+		<div class="block">
+			<h1 class="display">Slide Toggle</h1>
+		    <button id="boton2">Slide Toggle</button>
+		    <p id="alterna">Presiona el botón para alternar una imágen oculta</p>
+		    <img id="imagen" src="slide_toggle.jpg">
+		</div>
+		<div class="block" id="agrega" >
+			<h1 class="display">Append</h1>
+		    <button id="boton3">Append</button>
+		    <p>Presiona el botón para añadir un nuevo párrafo</p>
+		</div>
+	</div>
+</body>
+</html>

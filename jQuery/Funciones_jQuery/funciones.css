@@ -1,0 +1,40 @@
+.container{
+	padding: 0px;
+	margin: 0px;
+}
+.block{
+	width: 990px;
+	height: 150px;
+	border: solid blue 2px;
+	border-radius: 20px;
+	background-color: rgb(150, 200, 255);
+	margin-bottom: 10px;
+}
+.display{
+	text-align: center;
+	color: blue;
+}
+.block button{
+	width: 100px;
+	margin-left: 20px;
+	display: inline-block;
+	vertical-align: top;
+	border-radius: 5px;
+}
+.block p{
+	margin: 0px;
+	margin-left: 200px;
+	display: inline-block;
+}
+.red{
+	color: red;
+	font-weight: 600;
+}
+#imagen{
+	width: 200px;
+	height: 200px;
+	margin-left: 75px;
+	margin-top: -105px;
+	position: absolute;
+	display: none;
+}
