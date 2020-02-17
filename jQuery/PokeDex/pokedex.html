@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>PokeDex</title>
+	<link rel="stylesheet" type="text/css" href="poke-style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			for(i=1; i<=156; i++){
+				$('.display').append('<img id="'+i+'" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+i+'.png">');
+			}
+			$(document).on('click', 'img', function(){
+				var pokemon = $(this).attr('id');
+				$.get("https://pokeapi.co/api/v2/pokemon-form/"+pokemon+"/", function(nombre){
+					$('h1').remove();
+					$('#name').append('<h1>'+nombre.name+'</h1>');
+					});
+				$('#imagen img').remove();
+				$('#imagen').append('<img src= "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+pokemon+'.png">');
+				$.get("https://pokeapi.co/api/v2/pokemon/"+pokemon+"/", function(tipos){
+					$('li').remove();
+					for(i=0; i<tipos.types.length; i++){
+						$('#type-list').append('<li>'+tipos.types[i].type.name+'</li>');
+					}
+				});
+				$.get("https://pokeapi.co/api/v2/pokemon/"+pokemon+"/", function(alt){
+					$('#altura p').remove();
+					$('#altura').append('<p>'+alt.height+'</p>');
+				});
+					$.get("https://pokeapi.co/api/v2/pokemon/"+pokemon+"/", function(peso){
+					$('#peso p').remove();
+					$('#peso').append('<p>'+peso.weight+'</p>');
+				});
+			});
+		});
+			// $('img').click(function(){
+			// 	console.log("Pokemon " + $(this).attr("id"))});
+
+	</script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="display">
+			
+		</div>
+		<div class="dex">
+			<div id="name">
+				<h1 style="font-size: 20px; margin-top: 17px;">Elige tu Pokemón</h1>
+			</div>
+			<div id="imagen"></div>
+			<div id="info">
+				<div id="tipos">
+					<h4>Tipos:</h4>
+					<ul id="type-list"></ul>
+				</div>
+				<div id="altura">
+					<h4>Altura:</h4>
+				</div>
+				<div id="peso">
+					<h4>Peso:</h4>
+				</div>
+			</div>
+			<h5>co-Designed by Dineli</h5>
+		</div>
+		
+	</div>
+
+</body>
+
+</html>
