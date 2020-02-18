@@ -10,9 +10,14 @@
 			for(i=1; i<=756; i++){
 				$('.display').append('<img id="'+i+'" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+i+'.png">');
 			}
+			$('.display img').hover(function(){
+				$(this).css('background-color', 'rgba(50, 100, 200, 0.3)')
+			}, function(){
+				$(this).css('background-color', 'rgba(50,150,250,0.1)')
+			});
 			$(document).on('click', 'img', function(){
 				var pokemon = $(this).attr('id');
-				$.get("https://pokeapi.co/api/v2/pokemon-form/"+pokemon+"/", function(nombre){
+				$.get("https://pokeapi.co/api/v2/pokemon/"+pokemon+"/", function(nombre){
 					$('h2').remove();
 					$('#name').append('<h2>'+nombre.name+'</h2>');
 					});
