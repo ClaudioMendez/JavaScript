@@ -18,8 +18,8 @@
 			$(document).on('click', 'img', function(){
 				var pokemon = $(this).attr('id');
 				$.get("https://pokeapi.co/api/v2/pokemon/"+pokemon+"/", function(nombre){
-					$('h2').remove();
-					$('#name').append('<h2>'+nombre.name+'</h2>');
+					$('h3').remove();
+					$('#name').append('<h3>'+nombre.name+'</h3>');
 					});
 				$('#imagen img').remove();
 				$('#imagen').append('<img src= "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+pokemon+'.png">');
@@ -52,7 +52,7 @@
 		</div>
 		<div class="dex">
 			<div id="name">
-				<h2 style="font-size: 20px; margin-top: 17px;">Elige tu Pokemón</h2>
+				<h3 style="font-size: 20px; margin-top: 17px;">Elige tu Pokemón</h3>
 			</div>
 			<div id="imagen"></div>
 			<div id="info">
