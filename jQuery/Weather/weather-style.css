@@ -1,0 +1,116 @@
+.container{
+	width: 1070px;
+	height: 575px;
+	margin: 40px;
+	border: solid blue 1px;
+	border-radius: 20px;
+	background-image: url('./img/weather.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	opacity: 0.8;
+}
+.info{
+	width: 990px;
+	height: 435px;
+	margin-top: 30px;
+	margin-left: 40px;
+}
+.left{
+	width: 435px;
+	height: 435px;
+	display: inline-block;
+	vertical-align: top;
+	background-color: rgba(50, 100, 150, 0.6);
+	border-radius: 10px;
+}
+#name{
+	margin: 0px;
+	padding: 0px;
+	width: 430px;
+	height: 100px;
+	display: inline-block;
+}
+#name h3{
+	margin: 0px;
+	padding: 35px;
+	text-align: center;
+	font-family: verdana;
+	font-size: 32px;
+	color: white;
+	opacity: 0.8;
+}
+#icon{
+	width: 230px;
+	height: 230px;
+	margin-left: 95px;
+	background-size: contain;
+}
+#icon p{
+	width: 230px;
+	margin: 0px;
+	padding: 0px;
+	margin-top: 95px;
+	display: inline-block;
+	color: rgb(230, 230, 55);
+	font-size: 42px;
+	font-weight: 600;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	text-align: center;
+}
+#desc{
+	margin: 0px;
+	padding: 0px;
+	width: 430px;
+	height: 100px;
+	display: inline-block;
+}
+#desc h2{
+	width: 435px;
+	margin: 0px;
+	padding: 0px;
+	display: inline-block;
+	vertical-align: top;
+	font-family: verdana;
+	font-size: 24px;
+	font-weight: 400;
+	color: white;
+	text-align: center;
+	text-transform: uppercase;
+	opacity: 0.8;
+}
+.right{
+	width: 530px;
+	height: 435px;
+	display: inline-block;
+	background-color: rgba(50, 100, 150, 0.6);
+	border-radius: 10px;
+}
+.right p{
+	margin:0px;
+	padding-top: 25px;
+	width: 530px;
+	height: 60px;
+	display: inline-block;
+	text-indent: 10px;
+	font-family: verdana;
+	font-size: 24px;
+	font-weight: 600;
+	color: white;
+}
+.right p span{
+	color: rgb(230, 230, 55);
+}
+form{
+	margin-top: 45px;
+	margin-left: 390px;
+}
+.city{
+	width: 230px;
+	height: 30px;
+	border-radius: 5px;
+	font-size: 22px;
+	font-weight: 400;
+	color: darkblue;
+	text-indent: 10px;
+	text-transform: capitalize;
+}
