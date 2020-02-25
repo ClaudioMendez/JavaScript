@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>El Tiempo</title>
+	<link rel="stylesheet" type="text/css" href="weather-style.css">
+<!-- 	api-key: 33d4ae58b9733b72182a5d306fca8b19 -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('form').submit(function(){
+				var ciudad = $('.city').val();
+				var url = 'http://api.openweathermap.org/data/2.5/weather?q='+ciudad+'&lang=es&units=metric&appid=33d4ae58b9733b72182a5d306fca8b19';
+				$.get(url, function(city){
+					// console.log(city);
+					$.get(url, function(fondo){
+					var tiempo = fondo.weather[0].main;
+					if(tiempo=='Clear'){
+						$('.container').css('background-image', 'url("./img/clear.png")');
+					}else if(tiempo=='Mist'){
+						$('.container').css('background-image', 'url("./img/mist.jpg")');
+					}else if(tiempo=='Fog'){
+						$('.container').css('background-image', 'url("./img/fog.jpg")');
+					}else if(tiempo=='Smoke'){
+						$('.container').css('background-image', 'url("./img/smoke.jpg")');
+					}else if(tiempo=='Ash'){
+						$('.container').css('background-image', 'url("./img/ash.jpg")');
+					}else if(tiempo=='Clouds'){
+						$('.container').css('background-image', 'url("./img/clouds.png")');
+					}else if(tiempo=='Drizzle'){
+						$('.container').css('background-image', 'url("./img/drizzle.png")');
+					}else if(tiempo=='Rain' || tiempo=='Squal'){
+						$('.container').css('background-image', 'url("./img/rain.png")');
+					}else if(tiempo=='Snow'){
+						$('.container').css('background-image', 'url("./img/snow.png")');
+					}else if(tiempo=='Thunderstorm'){
+						$('.container').css('background-image', 'url("./img/thunderstorm.png")');
+					}else if(tiempo=='Tornado'){
+						$('.container').css('background-image', 'url("./img/tornado.jpg")');
+					}else {
+						$('.container').css('background-image', 'url("./img/weather.png")');
+					}
+				});
+					$('#name h3').remove();
+					$('#name').append('<h3>'+city.name+'</h3>');
+				$.get(url, function(icono){
+					var url2 = 'http://openweathermap.org/img/wn/'+icono.weather[0].icon+'@2x.png';
+					$('#icon img').remove();
+					$('#icon').css('background-image', 'url("'+url2+'")');
+					$('#desc h2').remove();
+					$('#desc').append('<h2>'+icono.weather[0].description+'</h2>');
+					$('#icon p').remove();
+					$('#icon').append('<p>'+Math.round(icono.main.temp)+' °C</p>');
+				});
+
+				$.get(url, function(data){
+					$('#max').remove();
+					$('.right').append('<p id="max">Temperatura Máxima: <span>'+Math.round(data.main.temp_max)+' °C</span></p>');
+					$('#min').remove();
+					$('.right').append('<p id="min">Temperatura Mínima: <span>'+Math.round(data.main.temp_min)+' °C</span></p>');
+					$('#sens').remove();
+					$('.right').append('<p id="sens">Sensación Térmica: <span>'+Math.round(data.main.feels_like)+' °C</span></p>');
+					$('#presion').remove();
+					$('.right').append('<p id="presion">Presión Atmosférica: <span>'+data.main.pressure+' hpa</span></p>');
+					$('#humedad').remove();
+					$('.right').append('<p id="humedad">Humedad: <span>'+data.main.humidity+'%</span></p>');
+				});
+				}, 'json');
+				return false;
+			});
+
+		});
+	</script>
+
+</head>
+<body>
+	<div class="container">
+		<form>
+			<input type="text" class="city">
+			<input type="submit" value="Consulta"></input>
+			<input type="reset" value="Reset">
+		</form>
+		<div class="info">
+			<div class="left">
+				<div id="name">
+					<h3></h3>
+				</div>
+				<div id="icon">
+					<p></p>
+				</div>
+				<div id="desc">
+					<h2></h2>
+				</div>
+				
+			</div>
+			<div class="right">
+				<p id="max"></p>
+				<p id="min"></p>
+				<p id="sens"></p>
+				<p id="presion"></p>
+				<p id="humedad"></p>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
