@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Game of Thrones</title>
+	<link rel="stylesheet" type="text/css" href="thrones-style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.house p').hover(function(){
+				$(this).css('background-color', 'rgba(180, 160, 110, 0.7)');
+			}, function(){
+				$(this).css('background-color', 'rgba(179, 82, 23, 0.8)');
+			});
+			$('#stark').click(function(){
+				$.get("https://anapioficeandfire.com/api/houses/362", function(stark){
+					$('#titulo p').remove();
+					$('#titulo').append('<p>'+stark.name+'</p>');
+					$('#display h4').remove();
+					$('#display').append('<h4>Words:   <span>'+stark.words+'</span></h4>');
+					$('#display').append('<h4>Titles: </h4>');
+					$('#display ul').remove();
+					$('#display').append('<ul></ul>');
+					for(i=0; i<stark.titles.length; i++){
+						$('#display ul').append('<li>'+stark.titles[i]+'</li>');
+					}
+				});
+			});
+			$('#targaryen').click(function(){
+				$.get("https://anapioficeandfire.com/api/houses/378", function(targa){
+					$('#titulo p').remove();
+					$('#titulo').append('<p>'+targa.name+'</p>');
+					$('#display h4').remove();
+					$('#display').append('<h4>Words:   <span>'+targa.words+'</span></h4>');
+					$('#display').append('<h4>Titles: </h4>');
+					$('#display ul').remove();
+					$('#display').append('<ul></ul>');
+					for(i=0; i<targa.titles.length; i++){
+						$('#display ul').append('<li>'+targa.titles[i]+'</li>');
+					}
+				});
+			});
+			$('#lannister').click(function(){
+				$.get("https://anapioficeandfire.com/api/houses/229", function(lanni){
+					$('#titulo p').remove();
+					$('#titulo').append('<p>'+lanni.name+'</p>');
+					$('#display h4').remove();
+					$('#display').append('<h4>Words:   <span>'+lanni.words+'</span></h4>');
+					$('#display').append('<h4>Titles: </h4>');
+					$('#display ul').remove();
+					$('#display').append('<ul></ul>');
+					for(i=0; i<lanni.titles.length; i++){
+						$('#display ul').append('<li>'+lanni.titles[i]+'</li>');
+					}
+				});
+			});
+			$('#baratheon').click(function(){
+				$.get("https://anapioficeandfire.com/api/houses/17", function(bara){
+					$('#titulo p').remove();
+					$('#titulo').append('<p>'+bara.name+'</p>');
+					$('#display h4').remove();
+					$('#display').append('<h4>Words:   <span>'+bara.words+'</span></h4>');
+					$('#display').append('<h4>Titles: </h4>');
+					$('#display ul').remove();
+					$('#display').append('<ul></ul>');
+					for(i=0; i<bara.titles.length; i++){
+						$('#display ul').append('<li>'+bara.titles[i]+'</li>');
+					}
+				});
+			});
+		});
+	</script>
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="row1">
+			<div class="house" id="stark"><p>Stark</p></div>
+			<div class="house" id="targaryen"><p>Targaryen</p></div>
+			<div class="house" id="lannister"><p>Lannister</p></div>
+			<div class="house" id="baratheon"><p>Baratheon</p></div>			
+		</div>
+		<div class="row2">
+			<div class="info">
+				<div id="titulo">
+				<p>House Name</p>		
+				</div>
+				<div id="display">
+					<h4>Words:   </h4>
+					<h4>Titles: </h4>
+					<ul></ul>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+</body>
+</html>
